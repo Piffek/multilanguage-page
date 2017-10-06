@@ -12,7 +12,7 @@ You must create file data.php with data to your database and contain to "src/".
 Next you must create method to get data of database using PDO in file connect.php
 
 ```php
-	public function nav(){
+public function nav(){
       $stmt = $this->dbh->prepare('SELECT `nav` FROM pl');
       $stmt->execute();
       return $stmt->fetchAll();
