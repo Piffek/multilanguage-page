@@ -1,5 +1,5 @@
 <?php 
 
-foreach($connect->body() as $c){
+foreach($connect->get('body') as $c){
     echo $c['body'];
 }

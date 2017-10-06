@@ -9,10 +9,14 @@ require_once __DIR__ . '/vendor/autoload.php';
 use Src\Connect as Connect;
 $connect = new Connect();
 
-include 'src/Html/nav.php';
+function requireToVar($file, $connect){
+    ob_start();
+    require $file;
+    ob_get_contents();
+}
 
-include 'src/Html/body.php';
+$nav = requireToVar('src/Html/nav.php', $connect)
 
-
+echo '';
 
 ?>

@@ -1,5 +1,5 @@
 <?php 
 
-foreach($connect->nav() as $c){
+foreach($connect->get('nav') as $c){
     echo $c['nav'];
 }

@@ -18,18 +18,12 @@ class Connect{
         }
     }
     
-    public function nav(){
-      $stmt = $this->dbh->prepare('SELECT `nav` FROM pl');
-      $stmt->execute();
-      
-      return $stmt->fetchAll();
+    public function get($what){
+        $stmt = $this->dbh->prepare('SELECT '.$what.' FROM pl');
+        $stmt->execute();
+        
+        return $stmt->fetchAll();
     }
-	
-	public function body(){
-      $stmt = $this->dbh->prepare('SELECT `body` FROM pl');
-      $stmt->execute();
-      
-      return $stmt->fetchAll();
-    }
+    
 }
 ?>
