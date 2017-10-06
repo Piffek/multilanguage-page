@@ -33,7 +33,7 @@ Next create variable in main page (index.php) contain part of HTML with nav.php 
 
 ```php
 
-$nav = requireToVar('src/Html/nav.php', $connect);
+$nav = requireFile('src/Html/nav.php', $connect);
 
 ```
 
