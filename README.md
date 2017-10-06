@@ -1,5 +1,8 @@
-Translate your WebSite!
+Translate your WebSite! 
 
+If you have domain from abroad you may translate text on this page! 
+
+Usage: 
 You must create file data.php with data to your database and contain to "src/".
 
 ```php
