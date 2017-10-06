@@ -5,8 +5,13 @@ error_reporting(E_ALL);
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-require 'src/Bootstrap.php';
-include 'src/Html/page.php';
+
+use Src\Connect as Connect;
+$connect = new Connect();
+
+include 'src/Html/nav.php';
+
+include 'src/Html/body.php';
 
 
 
