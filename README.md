@@ -12,22 +12,13 @@ const USER = 'your_user_name';
 const PASS = 'your_user_password';
 ```
 
-Next you must create method to get data of database using PDO in file connect.php
-
-```php
-public function nav(){
-    $stmt = $this->dbh->prepare('SELECT `nav` FROM pl');
-    $stmt->execute();
-    return $stmt->fetchAll();
-}
-```
 
 Next you must create folder in src/HTML directory with part of HTML translate text.
 
 Example: create file nav.php with text contain in navigation part of page.
 
 ```php
-foreach($connect->nav() as $c){
+foreach($connect->get('nav') as $c){
     echo $c['nav'];
 }
 ``` 
