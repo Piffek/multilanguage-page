@@ -11,7 +11,7 @@ $connect = new Connect();
 
 function requireFile($file, $connect){
     ob_start();
-    require $file;
+    htmlspecialchars(require $file, ENT_QUOTES, 'UTF-8');
     ob_get_clean();
 }
 
