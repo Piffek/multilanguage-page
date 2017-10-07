@@ -12,7 +12,7 @@ $connect = new Connect();
 function requireFile($file, $connect){
     ob_start();
     require $file;
-    htmlspecialchars(ob_get_clean(), ENT_QUOTES, 'UTF-8');
+    htmlentities(ob_get_clean(), ENT_QUOTES, 'UTF-8');
 }
 
 
