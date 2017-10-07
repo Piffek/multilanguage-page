@@ -11,9 +11,11 @@ $connect = new Connect();
 
 function requireFile($file, $connect){
     ob_start();
-    htmlspecialchars(require $file, ENT_QUOTES, 'UTF-8');
-    ob_get_clean();
+    require $file;
+    htmlspecialchars(ob_get_clean(), ENT_QUOTES, 'UTF-8');
 }
+
+
 
 $nav = requireFile('src/Html/nav.php', $connect);
 
