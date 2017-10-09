@@ -7,9 +7,9 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 
 use Src\Connect as Connect;
-$connect = new Connect();
 
-function requireFile($file, $connect){
+
+function requireFile(string $file, Connect $connect){
     ob_start();
     require $file;
     htmlentities(ob_get_clean(), ENT_QUOTES, 'UTF-8');
@@ -17,7 +17,7 @@ function requireFile($file, $connect){
 
 
 
-$nav = requireFile('src/Html/nav.php', $connect);
+$nav = requireFile('src/Html/nav.php', new Connect);
 
 echo '';
 

@@ -17,7 +17,7 @@ class Connect{
 		}
     }
     
-    public function get($what){
+    public function get(string $what) : array{
         $stmt = $this->dbh->prepare('SELECT '.$what.' FROM pl');
         $stmt->execute();
         
