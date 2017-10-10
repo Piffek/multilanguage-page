@@ -37,6 +37,6 @@ Example:
 
 ```php
 echo '
-	This is '.$nav.' this page
+	This is '.addText($nav).' this page
 ';
 ```
