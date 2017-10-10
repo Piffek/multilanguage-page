@@ -6,19 +6,18 @@ class Connect{
     public function __construct(){
 		$config = include 'config.php';
 		
-        try {
-            $this->dbh = new \PDO("mysql:
-                host=".$config['database']['db_host'].";
-                dbname=".$config['database']['db_name']."", 
-                $config['database']['user'], 
-                $config['database']['pass']);
-        } catch (PDOException $e) {
-            print "Error!: " . $e->getMessage() . "<br/>";
-            die();
-        }
+		try {
+		    $dsn = 'mysql:dbname='.$config['database']['db_name'].';host='.$config['database']['db_host'].'';
+		    $user = $config['database']['user'];
+		    $password = $config['database']['pass'];
+		    $this->dbh = new \PDO($dsn, $user, $password);
+		} catch (\PDOException $e) {
+		    print "Error!: " . $e->getMessage() . "<br/>";
+		    die();
+		}
     }
     
-    public function get($what){
+    public function get(string $what) : array{
         $stmt = $this->dbh->prepare('SELECT '.$what.' FROM pl');
         $stmt->execute();
         
