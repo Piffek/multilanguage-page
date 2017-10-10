@@ -11,11 +11,7 @@ class Connect{
 		    $user = $config['database']['user'];
 		    $password = $config['database']['pass'];
 		    $this->dbh = new \PDO($dsn, $user, $password);
-<<<<<<< HEAD
 		} catch (\PDOException $e) {
-=======
-		} catch (PDOException $e) {
->>>>>>> bd596c7e437565cad616af684bf878418797767d
 		    print "Error!: " . $e->getMessage() . "<br/>";
 		    die();
 		}
