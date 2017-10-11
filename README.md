@@ -45,17 +45,17 @@ echo '
 If you would like add new redirect you must create file.php.
 file.php
 ```php
-	use Src\Bootstrap as Bootstrap;
-	new Bootstrap('findYourMethod');
+use Src\Bootstrap as Bootstrap;
+new Bootstrap('findYourMethod');
 ``` 
 
 Next you must create new Class to contain logic
 ```php
-	class YourClass{
-		public function method(){
-			//logic
-		}
+class YourClass{
+	public function method(){
+		//logic
 	}
+}
 ```
 and you may use Strategy Pattern in Bootstrap class to choose your class and method
 
