@@ -10,7 +10,7 @@ class Text{
 		$this->connect = $connect;
 	}
 	
-	public function update($row, $text){
+	public function update(string $row, string $text){
 
 		$stmt = $this->connect->dbh->prepare('UPDATE co_uk SET '.$row.' = :'.$row.' WHERE id=1');
 		$stmt->bindParam(':'.$row, $text);

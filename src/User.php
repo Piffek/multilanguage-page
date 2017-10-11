@@ -11,7 +11,7 @@ class User{
 		$this->connect = $connect;
 	}
     
-    public function addToSession($login, $password){
+    public function addToSession(string $login, string $password){
         
         $dataUserWhoPressSubmit = $this->checkLogin($login, $password);
         

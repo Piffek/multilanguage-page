@@ -69,7 +69,7 @@ use Src\Connect as Connect;
 use Namespace\YourClass;
 
 class Bootstrap{
-	public function __construct($event, array $array = NULL){
+	public function __construct(string $event, array $array = NULL){
 		switch($event){
 			case 'session':
 				return (new User(new Connect))->addToSession($array[0], $array[1]);
