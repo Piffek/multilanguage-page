@@ -7,7 +7,6 @@ return [
            'user' => USER,
            'pass' => PASS,
        ],
+	   'domain' => DOMAIN,
 ];
 
-
-?>

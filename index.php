@@ -7,7 +7,9 @@ require_once __DIR__ . '/vendor/autoload.php';
 require '/src/editForm.php';
 
 use Src\Connect as Connect;
+use Src\Routers;
 
+(new Routers(new Connect))->load($_SERVER['REQUEST_URI']);
 
 function requireFile(string $file, Connect $connect){
     ob_start();

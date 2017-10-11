@@ -1,28 +1,27 @@
 <?php
 namespace Src;
 class Connect{
-    private $config;
+    public $dbh, $config;
     
     public function __construct(){
-		$config = include 'config.php';
+		$this->config = include 'config.php';
 		
-		try {
-		    $dsn = 'mysql:dbname='.$config['database']['db_name'].';host='.$config['database']['db_host'].'';
-		    $user = $config['database']['user'];
-		    $password = $config['database']['pass'];
-		    $this->dbh = new \PDO($dsn, $user, $password);
-		} catch (\PDOException $e) {
-		    print "Error!: " . $e->getMessage() . "<br/>";
-		    die();
-		}
+        try {
+			$dsn = 'mysql:dbname='.$this->config['database']['db_name'].';host='.$this->config['database']['db_host'].'';
+			$user = $this->config['database']['user'];
+			$password = $this->config['database']['pass'];
+            $this->dbh = new \PDO($dsn, $user, $password);
+        } catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
     }
     
     public function get(string $what) : array{
-        $stmt = $this->dbh->prepare('SELECT '.$what.' FROM pl');
+        $stmt = $this->dbh->prepare('SELECT '.$what.' FROM co_uk');
         $stmt->execute();
         
         return $stmt->fetchAll();
     }
-    
 }
 ?>
