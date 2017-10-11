@@ -66,7 +66,7 @@ namespace Src;
 use Src\User as User;
 use Src\Text as Text;
 use Src\Connect as Connect;
-use PathToYourClass;
+use Namespace\YourClass;
 
 class Bootstrap{
 	public function __construct($event, array $array = NULL){
