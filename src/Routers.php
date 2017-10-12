@@ -27,7 +27,7 @@ class Routers{
 	
 	public function pathNotExists($path){
 		if(!file_exists('src'.$path.'.php') && $path !== '/' && !isset($_GET['part'])){
-			throw new \Exception('Œcie¿ka o nazwie '.$path. ' nie zosta³a zdefiniowana');
+			throw new \Exception($path. ' not found');
 		}
 	}
 }
