@@ -24,7 +24,7 @@ foreach($connect->get('nav') as $c){
 }
 ``` 
 
-Next create variable in main page (index.php) contain part of HTML with nav.php file.
+Next create variable in main page (index.php) contain part of HTML of nav.php file.
 
 ```php
 
@@ -32,7 +32,7 @@ $nav = requireFile('src/Html/nav.php', $connect);
 
 ```
 
-You may use this variable in HTML
+You may use this variable in HTML and edit example text in navbar, menu etc.
 
 Example:
 
@@ -42,17 +42,26 @@ echo '
 ';
 ```
 
+
+Of if you show alone text
+$nav = explode('%', requireToVar('src/Html/nav.php', $connect));
+```php
+echo '
+	This is '.$nav[0].' page
+';
+```
+
 If you would like add new redirect you must create file.php.
 file.php
 ```php
 use Src\Bootstrap as Bootstrap;
-new Bootstrap('findYourMethod');
+return (new Bootstrap('findYourMethod'))->check()->yourMethod();
 ``` 
 
 Next you must create new Class to contain logic
 ```php
 class YourClass{
-	public function method(){
+	public function yourMethod(){
 		//logic
 	}
 }
@@ -69,22 +78,26 @@ use Src\Connect as Connect;
 use Namespace\YourClass;
 
 class Bootstrap{
+    public $obj;
 	public function __construct(string $event, array $array = NULL){
 		switch($event){
 			case 'session':
-				return (new User(new Connect))->addToSession($array[0], $array[1]);
-				break;
 			case 'logOff':
-				return (new User())->logOff();
+				$this->obj = new User(new Connect);
 				break;
-			case 'updateText':
-				return (new Text(new Connect))->update($array[0], $array[1]);
+			case 'updateTextNav':
+			case 'updateTextMenu':
+			case 'updateTextNavBody':
+			    $this->obj = new Text(new Connect);
 				break;
 			case 'findYourMethod':
-				return (new YourClass())->method(array ['param']);
-				break
+				$this->obj = new YourClass();
 			default;
 		}		
+	}
+	
+	public function check(){
+	    return $this->obj;
 	}
 }
 ```

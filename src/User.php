@@ -11,9 +11,9 @@ class User{
 		$this->connect = $connect;
 	}
     
-    public function addToSession(string $login, string $password){
+    public function addToSession(array $loginParam){
         
-        $dataUserWhoPressSubmit = $this->checkLogin($login, $password);
+        $dataUserWhoPressSubmit = $this->checkLogin($loginParam['login'], $loginParam['password']);
         
         if(!empty($dataUserWhoPressSubmit)){
             $_SESSION['user_id'] = $dataUserWhoPressSubmit[0]['id'];
@@ -24,6 +24,7 @@ class User{
 	
 	public function logOff(){
 		session_destroy();
+		
 		return header('Location: '.$this->connect->config['domain']);
 	}
 	

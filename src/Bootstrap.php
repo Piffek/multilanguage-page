@@ -6,18 +6,23 @@ use Src\Text as Text;
 use Src\Connect as Connect;
 
 class Bootstrap{
+    public $obj;
 	public function __construct(string $event, array $array = NULL){
 		switch($event){
 			case 'session':
-				return (new User(new Connect))->addToSession(string $array[0], string $array[1]);
-				break;
 			case 'logOff':
-				return (new User(new Connect)))->logOff();
+				$this->obj = new User(new Connect);
 				break;
-			case 'updateText':
-				return (new Text(new Connect))->update($array[0], $array[1]);
+			case 'updateTextNav':
+			case 'updateTextMenu':
+			case 'updateTextNavBody':
+			    $this->obj = new Text(new Connect);
 				break;
 			default;
 		}		
+	}
+	
+	public function check(){
+	    return $this->obj;
 	}
 }

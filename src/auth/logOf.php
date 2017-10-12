@@ -2,4 +2,5 @@
 namespace Src;
 
 use Src\Bootstrap as Bootstrap;
-new Bootstrap('logOff');
+
+return (new Bootstrap('logOff'))->check()->logOff();
