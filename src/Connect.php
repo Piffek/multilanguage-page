@@ -14,9 +14,9 @@ class Connect{
 			$user = $this->config['database']['user'];
 			$password = $this->config['database']['pass'];
             $this->dbh = new \PDO($dsn, $user, $password);
-			
+			throw new \PDOException('Bad data to database');
         } catch (\PDOException $e) {
-            throw new \PDOException('Bad data to database');
+             echo $e->getMessage();
         }
     }
     
