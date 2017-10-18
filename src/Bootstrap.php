@@ -7,7 +7,12 @@ use Src\Connect as Connect;
 
 class Bootstrap{
     public $obj;
-	public function __construct(string $event, array $array = NULL){
+	
+	/**
+	* Strategy pattern.
+	* @param String $event
+	**/
+	public function __construct(string $event){
 		switch($event){
 			case 'session':
 			case 'logOff':
@@ -22,6 +27,9 @@ class Bootstrap{
 		}		
 	}
 	
+	/**
+	* @return class
+	**/
 	public function check(){
 	    return $this->obj;
 	}

@@ -1,5 +1,9 @@
 <?php
 
+/**
+* Add text of database to form.
+* @param String $text
+**/
 function addText(string $text){
     if(isset($_SESSION['user_id'])){
         echo '

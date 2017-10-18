@@ -18,15 +18,16 @@ class Connect{
             die();
         }
     }
-    
+	
+    /**
+	* Get something of database
+	* @param String $what
+	* @return array
+	**/
     public function get(string $what) : array{
         try{
-
-           
             $stmt = $this->dbh->prepare('SELECT '.$what.' FROM co_uk');
             $stmt->execute();
-            
-            
             return $stmt->fetchAll();
         }catch(\PDOException $e){
             echo 'bad data to access db';
