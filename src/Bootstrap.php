@@ -1,18 +1,26 @@
 <?php
 
 namespace Src;
+
 use Src\User as User;
 use Src\Text as Text;
 use Src\Connect as Connect;
 
-class Bootstrap{
+/**
+ * 
+ * Return current class
+ *
+ */
+class Bootstrap
+{
     public $obj;
 	
 	/**
 	* Strategy pattern.
 	* @param String $event
 	**/
-	public function __construct(string $event){
+	public function __construct(string $event)
+	{
 		switch($event){
 			case 'session':
 			case 'logOff':
@@ -30,7 +38,8 @@ class Bootstrap{
 	/**
 	* @return class
 	**/
-	public function check(){
+	public function check()
+	{
 	    return $this->obj;
 	}
 }

@@ -1,0 +1,52 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "decfb3fd8648b9f9c142ed19d01d590d",
+    "packages": [
+        {
+            "name": "Piffek/Get-Selector",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Piffek/Get-Selector.git",
+                "reference": "60e24a8560906d3847721b5b2cd3852eaf9498c8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Piffek/Get-Selector/zipball/60e24a8560906d3847721b5b2cd3852eaf9498c8",
+                "reference": "60e24a8560906d3847721b5b2cd3852eaf9498c8",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Src\\": "src",
+                    "src\\": "src"
+                }
+            },
+            "support": {
+                "source": "https://github.com/Piffek/Get-Selector/tree/master",
+                "issues": "https://github.com/Piffek/Get-Selector/issues"
+            },
+            "time": "2017-10-21T19:33:34+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "piffek/get-selector": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

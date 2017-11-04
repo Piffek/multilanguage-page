@@ -1,15 +1,20 @@
 <?php
+
 namespace Src;
+
 use Src\Connect;
+
 use Exception;
 
-class Routers{
+class Routers
+{
 	private $connect;
 	
 	/**
 	* @param Src\Connect
 	**/
-	public function __construct(Connect $connect){
+	public function __construct(Connect $connect)
+	{
 		$this->connect = $connect;
 	}
 	
@@ -17,7 +22,8 @@ class Routers{
 	* Load url path
 	* @param String $path
 	**/
-	public function load($path){
+	public function load($path)
+	{
 		require_once __DIR__ . '/../vendor/autoload.php';
 		
 		try{
@@ -34,7 +40,8 @@ class Routers{
 	* if path not exist
 	**/
 	public function pathNotExists($path){
-		if(!file_exists('src'.$path.'.php') && $path !== '/' && !isset($_GET['part'])){
+		if(!file_exists('src'.$path.'.php') && $path !== '/' && !isset($_GET['part']))
+		{
 			throw new \Exception($path. ' not found');
 		}
 	}

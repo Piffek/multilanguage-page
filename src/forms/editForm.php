@@ -1,5 +1,13 @@
 <?php
-function addText(string $text, string $partial){
+
+/**
+ * Add new form
+ * 
+ * @param string $text
+ * @param string $partial
+ */
+function addText(string $text, string $partial)
+{
     if(isset($_SESSION['user_id'])){
         echo '<a class="'.$partial.'Edit" href="/?part='.$partial.'">Edytuj</a>';
         if(isset($_GET['part']) && $_GET['part'] === $partial){

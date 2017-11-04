@@ -1,9 +1,15 @@
 <?php
+
 namespace Src;
+
 class Connect{
     public $dbh, $config;
     
-    public function __construct(){
+    /**
+     * constructor to connect to db
+     */
+    public function __construct()
+    {
         ob_start();
 		$this->config = include 'config.php';
 		ob_get_clean();
@@ -24,7 +30,8 @@ class Connect{
 	* @param String $what
 	* @return array
 	**/
-    public function get(string $what) : array{
+    public function get(string $what) : array
+    {
         try{
             $stmt = $this->dbh->prepare('SELECT '.$what.' FROM co_uk');
             $stmt->execute();

@@ -3,5 +3,13 @@
 		"psr-4" : {
 			"Src\\" : "src"
 		}
+	},
+	"repositories" : [{
+			"type" : "vcs",
+			"url" : "https://github.com/Piffek/Get-Selector.git"
+		}
+	],
+	"require" : {
+		"Piffek/Get-Selector" : "dev-master"
 	}
 }

@@ -1,16 +1,18 @@
 <?php 
 
 namespace Src;
+
 use Src\Connect as Connect;
 
-
-class User{
+class User
+{
 	private $connect;
 	
 	/**
 	* @param Src\Connect
 	**/
-	public function __construct(Connect $connect){
+	public function __construct(Connect $connect)
+	{
 		$this->connect = $connect;
 	}
     
@@ -20,7 +22,8 @@ class User{
 	* @param String $password
 	* @return header
 	**/
-    public function addToSession($login, $password){
+    public function addToSession($login, $password)
+    {
         
         $dataUserWhoPressSubmit = $this->checkLogin($login, $password);
         
@@ -51,7 +54,8 @@ class User{
 	/**
 	* Destroy user session.
 	**/
-	public function logOff(){
+	public function logOff()
+	{
 		session_destroy();
 		
 		return header('Location: '.$this->connect->config['domain']);
